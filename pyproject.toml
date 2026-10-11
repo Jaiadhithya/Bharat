@@ -102,4 +102,6 @@ select = ["E", "F", "W", "I", "B", "UP"]
 
 [tool.ruff.lint.per-file-ignores]
 "scripts/*" = ["E501"]                 # laptop day-1 scripts, kept as written
+"tests/*" = ["E501"]                   # test pages and literals are data, not prose
+"signalcourt/gates/unbacked.py" = ["E501"] # one long regex
 "signalcourt/*/__init__.py" = ["E501"] # one-line module docstrings pointing at the spec
