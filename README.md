@@ -43,4 +43,4 @@ CI runs 3.10 and 3.12.
 
 ## Licence
 
-AGPL-3.0 (compatible with PyMuPDF's AGPL and the GPLv3 `nse` / `bse` libraries).
+AGPL-3.0, full text in `LICENSE` (compatible with PyMuPDF's AGPL and the GPLv3 `nse` / `bse` libraries).
