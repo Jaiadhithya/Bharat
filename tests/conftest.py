@@ -8,15 +8,12 @@ from signalcourt.ledger import Author, Ledger, RunPayload
 from signalcourt.store import DocStore
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+FIX = REPO_ROOT / "tests" / "fixtures"
 
 
 @pytest.fixture(scope="session")
 def repo_root() -> Path:
     return REPO_ROOT
-
-
-
-
 
 def run_payload(**kw):
     d = dict(
