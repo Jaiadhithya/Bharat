@@ -1,7 +1,6 @@
 """Golden tests against real public NSE filings (legacy formats). Values hand-checked against the files.
 
-Integrated-format and NBFC/insurer goldens arrive with the laptop fixture pack (capture_fixtures.py);
-see test_xbrl_integrated_todo below.
+Integrated-format, NBFC and insurer goldens live in test_xbrl_integrated.py.
 """
 
 from datetime import date

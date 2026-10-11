@@ -18,6 +18,7 @@ class SubtypeEvidence:
     entry_point: str = ""
     result_type: str = ""
     xbrl_url: str = ""
+    insurance_type: str = ""  # legacy insurer listing field, e.g. "Life-Insurance"
     announcement_texts: list[str] = field(default_factory=list)  # descriptions, for L-/NL-form markers
     segments: list[str] = field(default_factory=list)  # consolidated segment labels
     text_snippets: list[str] = field(default_factory=list)  # e.g. page-1 text of annual report
@@ -32,7 +33,7 @@ class SubtypeDecision:
 
 
 def _hay(ev: SubtypeEvidence) -> str:
-    return " ".join([ev.entry_point, ev.result_type, ev.xbrl_url]).lower()
+    return " ".join([ev.entry_point, ev.result_type, ev.xbrl_url, ev.insurance_type]).lower()
 
 
 def _classify_segment(label: str, lex: dict[str, list[str]]) -> str | None:

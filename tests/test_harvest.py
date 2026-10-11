@@ -286,3 +286,10 @@ def test_ytd_derivation_for_filings_without_quarter_context():
     assert d.value == pytest.approx(68248.0 - 33327.61)
     # Q2 without its Q1 predecessor cannot be derived, so nothing is invented:
     assert "interest_earned" not in {p.metric for p in Fl.derive_missing_quarters([q2])}
+
+
+def test_insurer_legacy_row_uses_period_end_and_integrated_row_qe_date():
+    legacy = Fl.filing_from_row("S", {"periodEnd": "31-Dec-2024", "consolidated": "Standalone", "xbrl": "u"}, "legacy")
+    assert legacy.period_end == date(2024, 12, 31) and not legacy.consolidated
+    integ = Fl.filing_from_row("S", {"qe_Date": "30-JUN-2026", "consolidated": "Consolidated"}, "integrated")
+    assert integ.period_end == date(2026, 6, 30) and integ.consolidated

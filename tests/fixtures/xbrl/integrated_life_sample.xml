@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:in-capmkt="http://www.sebi.gov.in/xbrl/2025-01-31/in-capmkt">
+<link:schemaRef xlink:type="simple" xlink:href="in-capmkt-ent-2025-01-31.xsd"/>
+<xbrli:context id="OneD"><xbrli:entity><xbrli:identifier scheme="http://www.nseindia.com/NSESymbol">ICICIPRULI</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2026-04-01</xbrli:startDate><xbrli:endDate>2026-06-30</xbrli:endDate></xbrli:period></xbrli:context>
+<xbrli:context id="OneI"><xbrli:entity><xbrli:identifier scheme="http://www.nseindia.com/NSESymbol">ICICIPRULI</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:instant>2026-06-30</xbrli:instant></xbrli:period></xbrli:context>
+<xbrli:unit id="INR"><xbrli:measure>iso4217:INR</xbrli:measure></xbrli:unit>
+<xbrli:unit id="pure"><xbrli:measure>xbrli:pure</xbrli:measure></xbrli:unit>
+<xbrli:unit id="INRPerShare"><xbrli:divide><xbrli:unitNumerator><xbrli:measure>iso4217:INR</xbrli:measure></xbrli:unitNumerator><xbrli:unitDenominator><xbrli:measure>xbrli:shares</xbrli:measure></xbrli:unitDenominator></xbrli:divide></xbrli:unit>
+
+<in-capmkt:DateOfStartOfReportingPeriod contextRef="OneD">2026-04-01</in-capmkt:DateOfStartOfReportingPeriod>
+<in-capmkt:DateOfEndOfReportingPeriod contextRef="OneD">2026-06-30</in-capmkt:DateOfEndOfReportingPeriod>
+<in-capmkt:ReportingQuarter contextRef="OneD">First quarter</in-capmkt:ReportingQuarter>
+<in-capmkt:TypeOfReportingPeriod contextRef="OneD">Quarterly</in-capmkt:TypeOfReportingPeriod>
+<in-capmkt:WhetherResultsAreAuditedOrUnaudited contextRef="OneD">Unaudited</in-capmkt:WhetherResultsAreAuditedOrUnaudited>
+<in-capmkt:DescriptionOfPresentationCurrency contextRef="OneD">INR</in-capmkt:DescriptionOfPresentationCurrency>
+<in-capmkt:LevelOfRounding contextRef="OneD">Crores</in-capmkt:LevelOfRounding>
+<in-capmkt:Symbol contextRef="OneD">ICICIPRULI</in-capmkt:Symbol>
+<in-capmkt:ISIN contextRef="OneD">INE726G01019</in-capmkt:ISIN>
+<in-capmkt:NameOfTheCompany contextRef="OneD">ICICI Prudential Life Insurance Company Limited</in-capmkt:NameOfTheCompany>
+<in-capmkt:NatureOfReportStandaloneConsolidated contextRef="OneD">Standalone</in-capmkt:NatureOfReportStandaloneConsolidated>
+<in-capmkt:TypeOfInsurance contextRef="OneD">Non-Linked Policy And Linked Policy</in-capmkt:TypeOfInsurance>
+<in-capmkt:GrossPremiumIncome contextRef="OneD" unitRef="INR" decimals="-5">102506300000</in-capmkt:GrossPremiumIncome>
+<in-capmkt:NetPremiumIncome contextRef="OneD" unitRef="INR" decimals="-5">97493300000</in-capmkt:NetPremiumIncome>
+<in-capmkt:Income contextRef="OneD" unitRef="INR" decimals="-5">283949000000</in-capmkt:Income>
+<in-capmkt:Expenses contextRef="OneD" unitRef="INR" decimals="-5">279187800000</in-capmkt:Expenses>
+<in-capmkt:ProfitLossBeforeTax contextRef="OneD" unitRef="INR" decimals="-5">4312200000</in-capmkt:ProfitLossBeforeTax>
+<in-capmkt:ProfitLossAfterTaxAndExtraordinaryItems contextRef="OneD" unitRef="INR" decimals="-5">3861800000</in-capmkt:ProfitLossAfterTaxAndExtraordinaryItems>
+<in-capmkt:SolvencyRatio contextRef="OneD" unitRef="pure" decimals="-5">2.254</in-capmkt:SolvencyRatio>
+<in-capmkt:PersistencyRatio13ThMonth contextRef="OneD" unitRef="pure" decimals="-5">0.815</in-capmkt:PersistencyRatio13ThMonth>
+<in-capmkt:PersistencyRatio25ThMonth contextRef="OneD" unitRef="pure" decimals="-5">0.702</in-capmkt:PersistencyRatio25ThMonth>
+<in-capmkt:PersistencyRatio61ThMonth contextRef="OneD" unitRef="pure" decimals="-5">0.632</in-capmkt:PersistencyRatio61ThMonth>
+<in-capmkt:BasicAndDilutedEPSAfterExtraordinaryItemsNetOfTaxExpenseForThePeriodNotToBeAnnualized contextRef="OneD" unitRef="INRPerShare" decimals="-5">2.66</in-capmkt:BasicAndDilutedEPSAfterExtraordinaryItemsNetOfTaxExpenseForThePeriodNotToBeAnnualized>
+<in-capmkt:Assets contextRef="OneI" unitRef="INR" decimals="-5">3316624600000</in-capmkt:Assets>
+</xbrli:xbrl>

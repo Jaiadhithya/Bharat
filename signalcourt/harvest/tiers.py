@@ -120,7 +120,9 @@ def harvest_t1(
     exch, store: DocStorePort, ent: EntityRef, as_of: date, rep: HarvestReport, quarters: int, budget: _Budget
 ) -> None:
     try:
-        listing = Fl.list_filings(exch, ent.symbol, ent.issuer)
+        listing = Fl.list_filings(
+            exch, ent.symbol, ent.issuer, legacy_index="insurance" if ent.subtype.startswith("insurer") else "equities"
+        )
     except Fl.IssuerMismatch as e:
         rep.errors.append(str(e))
         return

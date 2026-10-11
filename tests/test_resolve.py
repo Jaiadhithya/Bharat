@@ -135,3 +135,20 @@ def test_verified_domains_require_appearance_in_own_filings():
     assert PE.verified_domains("X", ["alpha.bank.in", "scam.example"], ["see www.alpha.bank.in for details"]) == [
         "alpha.bank.in"
     ]
+
+
+@pytest.mark.parametrize(
+    "url, ins_type, expected",
+    [
+        ("https://x/xbrl/INTEGRATED_FILING_NBFC_INDAS_1703240_28072026060526_WEB.xml", "", "nbfc"),
+        ("https://x/xbrl/NBFC_INDAS_118412_1368220_01022025121245.xml", "", "nbfc"),
+        ("https://x/xbrl/INTEGRATED_FILING_LI_1693431_15072026054017_WEB.xml", "", "insurer_life"),
+        ("https://x/xbrl/LI_117459_1356733_22012025115030.xml", "", "insurer_life"),
+        ("", "Life-Insurance", "insurer_life"),
+        ("https://x/xbrl/INTEGRATED_FILING_BANKING_1696070_18072026031922_WEB.xml", "", "bank"),
+        ("https://x/xbrl/BANKING_117296_1348238_16012025080654.xml", "", "bank"),
+    ],
+)
+def test_subtype_from_real_xbrl_file_names(url, ins_type, expected):
+    ev = S.SubtypeEvidence(entry_point="in-capmkt-ent-2026-01-31.xsd", xbrl_url=url, insurance_type=ins_type)
+    assert S.classify_subtype(ev).subtype == expected

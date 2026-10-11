@@ -46,7 +46,7 @@ def _is_cons(v: Any) -> bool:
 
 
 def filing_from_row(symbol: str, row: dict[str, Any], source: str) -> ResultFiling:
-    pe = parse_dt(_first(row, "toDate", "qe_Date", "qeDate", "period_ended"))
+    pe = parse_dt(_first(row, "toDate", "qe_Date", "qeDate", "period_ended", "periodEnd"))
     aud = _first(row, "audited")
     return ResultFiling(
         symbol=symbol,
@@ -62,11 +62,20 @@ def filing_from_row(symbol: str, row: dict[str, Any], source: str) -> ResultFili
 
 
 def list_filings(
-    exch, symbol: str, issuer: str, include_legacy: bool = True, min_integrated_after: date = date(2025, 3, 31)
+    exch,
+    symbol: str,
+    issuer: str,
+    include_legacy: bool = True,
+    min_integrated_after: date = date(2025, 3, 31),
+    legacy_index: str = "equities",
 ) -> list[ResultFiling]:
     """Legacy + integrated, newest first. Raises IssuerMismatch on legacy>0 and integrated==0 when the
     legacy feed already reaches past the integrated start (so a recent filer must have integrated rows)."""
-    legacy = [filing_from_row(symbol, r, "legacy") for r in exch.results_legacy(symbol)] if include_legacy else []
+    legacy = (
+        [filing_from_row(symbol, r, "legacy") for r in exch.results_legacy(symbol, index=legacy_index)]
+        if include_legacy
+        else []
+    )
     integ = [filing_from_row(symbol, r, "integrated") for r in exch.results_integrated(symbol, issuer)]
     if legacy and not integ:
         newest = max((f.period_end for f in legacy if f.period_end), default=None)

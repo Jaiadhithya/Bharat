@@ -64,7 +64,7 @@ class NSE:
         return _rows(d)
 
     def results_legacy(self, symbol: str, period: str = "Quarterly", index: str = "equities") -> list[dict[str, Any]]:
-        """Results to Dec 2024. Insurers may need another ``index`` value [verify 12 Oct]."""
+        """Results to Dec 2024. Insurers need ``index="insurance"`` (equities returns 0 rows; confirmed 11 Oct)."""
         d = self._json("/corporates-financial-results", {"index": index, "period": period, "symbol": symbol}, symbol)
         return _rows(d)
 
