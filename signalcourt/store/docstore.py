@@ -114,6 +114,20 @@ class DocStore:
         d["ocr"] = bool(d["ocr"])
         return DocMeta(**d)
 
+    def known_url(self, url: str) -> str | None:
+        """sha256 of an already-stored file fetched from ``url`` (first or final), else None.
+
+        Lets the harvester skip a download it already has (DocStorePort, implementation.md 7.5).
+        """
+        row = self.manifest.conn.execute(
+            "SELECT sha256 FROM documents WHERE first_url=? OR final_url=? LIMIT 1", (url, url)
+        ).fetchone()
+        if row is None:
+            row = self.manifest.conn.execute(
+                "SELECT sha256 FROM fetches WHERE (url=? OR final_url=?) AND sha256 IS NOT NULL LIMIT 1", (url, url)
+            ).fetchone()
+        return row["sha256"] if row else None
+
     def has(self, sha: str) -> bool:
         return self.manifest.get_document(sha) is not None
 
