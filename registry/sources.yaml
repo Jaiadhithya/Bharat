@@ -1,0 +1,12 @@
+# Source registry: one entry per source TYPE, never per company. Owner of the entries: B2 (net/harvest).
+# Skeleton from implementation.md 7.3-7.5; B2 fills endpoints and retrieval details.
+- {id: nse_results_xbrl, publisher: NSE, family: exchange_xbrl, tier: 1, retrieval: json_listing}
+- {id: nse_integrated_filing, publisher: NSE, family: exchange_xbrl, tier: 1, retrieval: json_listing}
+- {id: nse_announcements, publisher: NSE, family: company_filing, tier: 2, retrieval: json_listing}
+- {id: nse_annual_reports, publisher: NSE, family: company_filing, tier: 3, retrieval: json_listing}
+- {id: nse_credit_ratings, publisher: NSE, family: rating_agency, tier: 2, retrieval: json_listing}
+- {id: bse_announcements, publisher: BSE, family: company_filing, tier: 2, retrieval: json_listing, note: "fallback only; API returned 403 on 10 Oct"}
+- {id: rbi_press_releases, publisher: RBI, family: regulator, tier: 2, retrieval: html_listing}
+- {id: irdai_penalties, publisher: IRDAI, family: regulator, tier: 2, retrieval: html_listing}
+- {id: rating_rationale, publisher: rating agency, family: rating_agency, tier: 3, retrieval: search}
+- {id: web_search, publisher: search, family: credible_news, tier: 3, retrieval: search}

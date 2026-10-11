@@ -1,0 +1,10 @@
+# No-advice filter terms (one per line; owner: B4 gates/advice_privacy.py).
+buy
+sell
+hold
+target price
+recommend
+accumulate
+outperform
+underperform
+invest in

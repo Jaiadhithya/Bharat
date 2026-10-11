@@ -1,0 +1,10 @@
+.env
+workspace/
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+fixtures_v0_large/
+dist/
+*.egg-info/

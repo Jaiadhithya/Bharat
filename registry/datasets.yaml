@@ -1,0 +1,78 @@
+# [wave 2] Official datasets, one entry per dataset (implementation.md 5.7). Every entry starts at status: verify.
+- id: rbi_payment_stats_bankwise        # bank-wise ATM, POS and card statistics, monthly XLSX
+  group: nowcast
+  publisher: RBI
+  family: official_dataset
+  retrieval: xlsx_listing                # monthly listing page -> XLSX links
+  frequency: monthly
+  entity_key: bank_name                  # resolved by resolve.entity, unmatched rows logged
+  series: [credit_cards_outstanding, debit_cards_outstanding, pos_terminals, card_spend_value]
+  links_to_metric: {credit_cards_outstanding: kpi:credit_cards_in_force, card_spend_value: kpi:card_spends}
+  history_from: "verify"                 # [K] long monthly history
+  status: verify
+- id: npci_upi_member_stats
+  group: nowcast
+  publisher: NPCI
+  family: official_dataset
+  retrieval: manual                      # robots.txt disallows scripts; files saved by hand into workspace/manual/
+  frequency: monthly
+  entity_key: bank_name
+  series: [remitter_volume, beneficiary_volume, technical_decline_pct, business_decline_pct]
+  status: verify
+- id: life_council_monthly_nbp           # new-business premium by insurer, monthly
+  group: nowcast
+  publisher: Life Insurance Council / IRDAI
+  family: official_dataset
+  retrieval: xlsx_listing
+  frequency: monthly
+  entity_key: insurer_name
+  series: [first_year_premium, policies]
+  links_to_metric: {first_year_premium: ape}
+  status: verify
+- id: ibbi_announcements
+  group: asset_quality
+  publisher: IBBI
+  family: court_tribunal
+  retrieval: html_listing                # dated public announcements and orders; creditor names where stated
+  frequency: event
+  entity_key: creditor_name_in_text      # generic name matcher over the text, resolver-backed
+  series: [cirp_admissions_naming_creditor]
+  status: verify
+- id: lender_auction_notices
+  group: asset_quality
+  publisher: company (verified domain)
+  family: company_filing
+  retrieval: wayback_cdx                 # dated copies of the lender's own auction/sale-notice page
+  frequency: event
+  entity_key: self
+  series: [auction_notices_count]
+  status: verify
+- id: deposit_rate_pages
+  group: funding
+  publisher: company (verified domain)
+  family: company_filing
+  retrieval: wayback_cdx
+  frequency: event
+  entity_key: self
+  series: [td_rate_1y, td_rate_3y]
+  derived: {premium_vs_peer_median: "td_rate - peer median td_rate on the same date"}
+  status: verify
+- id: nse_ebp_issues
+  group: funding
+  publisher: NSE
+  family: market_data
+  retrieval: json_listing
+  frequency: event
+  entity_key: issuer_symbol
+  series: [coupon, tenor, issue_size]
+  derived: {spread_over_gsec: "coupon - G-sec yield of the same tenor on the issue date"}
+  status: verify
+- id: pillar3_lcr
+  group: funding
+  publisher: company (verified domain)
+  family: company_filing
+  retrieval: site_search                 # T3b: Pillar 3 / liquidity disclosure PDFs on the verified domain
+  frequency: quarterly
+  entity_key: self
+  series: [lcr, hqla, net_outflows]
+  status: verify

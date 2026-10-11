@@ -1,0 +1,11 @@
+# Source families for the independence rule (implementation.md 5.6, 7.13.4).
+# Wayback copies take the family of the page they copy, with origin_id = the original URL.
+- company_filing
+- exchange_xbrl
+- regulator
+- rating_agency
+- peer_filing
+- market_data
+- official_dataset
+- court_tribunal
+- credible_news

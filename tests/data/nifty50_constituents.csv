@@ -1,0 +1,51 @@
+symbol,company_name,isin,nse_industry,sub_sector,hackathon_track,track_notes,bse_scrip_code
+ADANIENT,Adani Enterprises Ltd.,INE423A01024,Metals & Mining,"Diversified conglomerate (airports, mining, new energy, trading)",none,NSE classes as Metals & Mining; conglomerate with green-hydrogen/coal trading exposure - could be argued B?,512599
+ADANIPORTS,Adani Ports and Special Economic Zone Ltd.,INE742F01042,Services,Ports & logistics,none,Infra/logistics; not energy despite Adani group; coal cargo exposure only indirect,532921
+APOLLOHOSP,Apollo Hospitals Enterprise Ltd.,INE437A01024,Healthcare,Hospitals & pharmacy retail,D?,Hospital chain + pharmacy distribution; healthcare services (provider) rather than pharma - D if track covers healthcare services,508869
+ASIANPAINT,Asian Paints Ltd.,INE021A01026,Consumer Durables,Paints,C?,"NSE: Consumer Durables; consumer discretionary (paints), not FMCG - ambiguous C",500820
+AXISBANK,Axis Bank Ltd.,INE238A01034,Financial Services,Private bank,A,,532215
+BAJAJ-AUTO,Bajaj Auto Ltd.,INE917I01010,Automobile and Auto Components,2W/3W automobiles,C?,Autos = consumer discretionary; include in C only if track covers autos,532977
+BAJAJFINSV,Bajaj Finserv Ltd.,INE918I01026,Financial Services,Financial holding co (lending + insurance),A,"Holding company for Bajaj Finance, Bajaj Allianz insurers",532978
+BAJFINANCE,Bajaj Finance Ltd.,INE296A01032,Financial Services,NBFC - consumer finance,A,,500034
+BEL,Bharat Electronics Ltd.,INE263A01024,Capital Goods,Defence electronics,none,Capital goods / defence,500049
+BHARTIARTL,Bharti Airtel Ltd.,INE397D01024,Telecommunication,Telecom services,none,Telecom,532454
+BSE,BSE Ltd.,INE118H01025,Financial Services,Stock exchange,A,"Exchange/market infrastructure; new entrant 30-Sep-2026 (replaced WIPRO). Shares listed only on NSE, so no BSE scrip code",
+CIPLA,Cipla Ltd.,INE059A01026,Healthcare,Pharmaceuticals,D,,500087
+COALINDIA,Coal India Ltd.,INE522F01014,Oil Gas & Consumable Fuels,Coal mining,B,Coal = energy fuel,533278
+DRREDDY,Dr. Reddy's Laboratories Ltd.,INE089A01031,Healthcare,Pharmaceuticals,D,,500124
+EICHERMOT,Eicher Motors Ltd.,INE066A01021,Automobile and Auto Components,Motorcycles (Royal Enfield) & CVs,C?,Autos = consumer discretionary; ambiguous for C,505200
+ETERNAL,Eternal Ltd.,INE758T01015,Consumer Services,Food delivery & quick commerce (Zomato/Blinkit),C?,Formerly Zomato Ltd; consumer internet/quick-commerce - consumer services rather than FMCG,543320
+GRASIM,Grasim Industries Ltd.,INE047A01021,Construction Materials,"Cement (via UltraTech), VSF, chemicals, paints (Birla Opus), financial services",none,Holding/diversified; NSE classes as Construction Materials; has paints and ABCL financial stake - not cleanly any track,500300
+HCLTECH,HCL Technologies Ltd.,INE860A01027,Information Technology,IT services,none,,532281
+HDFCBANK,HDFC Bank Ltd.,INE040A01034,Financial Services,Private bank,A,,500180
+HDFCLIFE,HDFC Life Insurance Company Ltd.,INE795G01014,Financial Services,Life insurance,A,,540777
+HINDALCO,Hindalco Industries Ltd.,INE038A01020,Metals & Mining,Aluminium & copper,none,Metals,500440
+HINDUNILVR,Hindustan Unilever Ltd.,INE030A01027,Fast Moving Consumer Goods,"FMCG - personal & home care, foods",C,,500696
+ICICIBANK,ICICI Bank Ltd.,INE090A01021,Financial Services,Private bank,A,,532174
+INDIGO,InterGlobe Aviation Ltd.,INE646L01027,Services,Airline,none,Aviation (services); fuel-cost sensitive but not energy,539448
+INFY,Infosys Ltd.,INE009A01021,Information Technology,IT services,none,,500209
+ITC,ITC Ltd.,INE154A01025,Fast Moving Consumer Goods,"FMCG / cigarettes, hotels (demerged), paperboard, agri",C,"Cigarettes-led FMCG conglomerate; NSE classes as FMCG so C, but tobacco dominates profits",500875
+JIOFIN,Jio Financial Services Ltd.,INE758E01017,Financial Services,NBFC / payments / AMC JV / insurance broking (Reliance group),A,Financial holding / NBFC,543940
+JSWSTEEL,JSW Steel Ltd.,INE019A01038,Metals & Mining,Steel,none,Metals,500228
+KOTAKBANK,Kotak Mahindra Bank Ltd.,INE237A01036,Financial Services,Private bank,A,,500247
+LT,Larsen & Toubro Ltd.,INE018A01030,Construction,Engineering & construction,none,Infra/EPC; has some energy EPC (hydrocarbon) business but not B,500510
+M&M,Mahindra & Mahindra Ltd.,INE101A01026,Automobile and Auto Components,"Automobiles (SUVs, tractors) + financial services arm",C?,Autos = consumer discretionary; owns M&M Financial (NBFC) but core is autos/farm,500520
+MARUTI,Maruti Suzuki India Ltd.,INE585B01010,Automobile and Auto Components,Passenger vehicles,C?,Autos = consumer discretionary; ambiguous for C,532500
+MAXHEALTH,Max Healthcare Institute Ltd.,INE027H01010,Healthcare,Hospitals,D?,"Healthcare services (hospital chain), not pharma - D if track covers healthcare services",543220
+NESTLEIND,Nestle India Ltd.,INE239A01024,Fast Moving Consumer Goods,FMCG - packaged foods,C,,500790
+NTPC,NTPC Ltd.,INE733E01010,Power,Power generation (thermal + renewables),B,,532555
+ONGC,Oil & Natural Gas Corporation Ltd.,INE213A01029,Oil Gas & Consumable Fuels,Oil & gas E&P,B,,500312
+POWERGRID,Power Grid Corporation of India Ltd.,INE752E01010,Power,Power transmission,B,Power utility (transmission),532898
+RELIANCE,Reliance Industries Ltd.,INE002A01018,Oil Gas & Consumable Fuels,"Conglomerate: O2C refining/petchem, upstream gas, retail, Jio telecom, new energy",B,"Classified B on NSE industry (Oil Gas & Consumable Fuels) and largest EBITDA segment, but retail (C) and Jio (telecom) are large - conglomerate caveat",500325
+SBILIFE,SBI Life Insurance Company Ltd.,INE123W01016,Financial Services,Life insurance,A,,540719
+SBIN,State Bank of India,INE062A01020,Financial Services,Public sector bank,A,,500112
+SHRIRAMFIN,Shriram Finance Ltd.,INE721A01047,Financial Services,NBFC - vehicle & MSME finance,A,,511218
+SUNPHARMA,Sun Pharmaceutical Industries Ltd.,INE044A01036,Healthcare,Pharmaceuticals,D,,524715
+TATACONSUM,Tata Consumer Products Ltd.,INE192A01025,Fast Moving Consumer Goods,"FMCG - tea, coffee, salt, foods",C,,500800
+TATASTEEL,Tata Steel Ltd.,INE081A01020,Metals & Mining,Steel,none,Metals,500470
+TCS,Tata Consultancy Services Ltd.,INE467B01029,Information Technology,IT services,none,,532540
+TECHM,Tech Mahindra Ltd.,INE669C01036,Information Technology,IT services,none,,532755
+TITAN,Titan Company Ltd.,INE280A01028,Consumer Durables,"Jewellery, watches, eyewear",C?,"NSE: Consumer Durables; consumer discretionary/retail, not FMCG",500114
+TMPV,Tata Motors Passenger Vehicles Ltd.,INE155A01022,Automobile and Auto Components,Passenger vehicles incl. EVs and JLR,C?,Tata Motors post-demerger (Oct 2025) passenger-vehicle entity; autos = consumer discretionary,500570
+TRENT,Trent Ltd.,INE849A01020,Consumer Services,"Apparel retail (Westside, Zudio)",C?,NSE: Consumer Services; consumer retail - ambiguous for C,500251
+ULTRACEMCO,UltraTech Cement Ltd.,INE481G01011,Construction Materials,Cement,none,,532538

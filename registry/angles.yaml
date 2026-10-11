@@ -1,0 +1,129 @@
+# Angle library (implementation.md 7.10; architecture.md 3.1). Generic templates only.
+# Row shape: id, question, subtypes, needs[], sensors[], mandatory_alternatives[], falsification_template, coverage_terms[].
+# Owner of the rows' details: B3 (rank). Skeleton values below.
+- id: A1
+  question: "Loan growth and asset quality move apart"
+  brief_question: Q1
+  subtypes: [bank, nbfc]
+  needs: [advances, gnpa_pct, gross_slippages]
+  sensors: [divergence, twin]
+  mandatory_alternatives: [sector_shock, base_effect, merger_or_acquisition, seasonality]
+  falsification_template: "{metric} {comparator} {threshold} by {period}"
+  coverage_terms: []
+- id: A2
+  question: "Cosmetic NPA improvement (write-offs, sales to ARCs)"
+  brief_question: Q1
+  subtypes: [bank, nbfc]
+  needs: [gnpa_amt, write_offs, recoveries_upgrades]
+  sensors: [divergence]
+  mandatory_alternatives: [accounting_or_definition_change, one_off, sector_shock]
+  falsification_template: "recoveries+upgrades explain > {threshold} of GNPA decline by {period}"
+  coverage_terms: []
+- id: A3
+  question: "Profit driven by provision release"
+  brief_question: Q1
+  subtypes: [bank, nbfc]
+  needs: [pat, ppop, provisions]
+  sensors: [divergence]
+  mandatory_alternatives: [one_off, sector_shock]
+  falsification_template: "{metric} {comparator} {threshold} by {period}"
+  coverage_terms: []
+- id: A4
+  question: "Stage 2 build-up under flat Stage 3"
+  brief_question: Q1
+  subtypes: [nbfc, bank]
+  needs: [stage2_pct, stage3_pct]
+  sensors: [divergence, twin]
+  mandatory_alternatives: [accounting_or_definition_change, sector_shock]
+  falsification_template: "{metric} {comparator} {threshold} by {period}"
+  coverage_terms: []
+- id: A5
+  question: "Hidden dependency on banks, co-lenders, funders"
+  brief_question: Q2
+  subtypes: [nbfc, bank, holding]
+  needs: [counterparty_edges]
+  sensors: [mirror]
+  mandatory_alternatives: [disclosed_elsewhere, sector_shock]
+  falsification_template: "top-N funder share falls below {threshold} by {period}"
+  coverage_terms: []
+- id: A6
+  question: "Funding-mix regime shift over five years"
+  brief_question: Q3
+  subtypes: [bank, nbfc]
+  needs: [borrowing_mix]
+  sensors: [regime, twin]
+  mandatory_alternatives: [merger_or_acquisition, regulatory_change]
+  falsification_template: "share of {source} returns within {threshold} of pre-break regime by {period}"
+  coverage_terms: []
+- id: A7
+  question: "Customer-profile shift (segment mix, ticket size, onboarding velocity)"
+  brief_question: Q3
+  subtypes: [bank, nbfc, insurer_life, insurer_general, holding, generic]
+  needs: [segment_mix]
+  sensors: [regime, divergence]
+  mandatory_alternatives: [merger_or_acquisition, seasonality]
+  falsification_template: "segment share returns to band by {period}"
+  coverage_terms: []
+- id: A8
+  question: "Disclosure change (KPI dropped, redefined, re-segmented; policy or auditor language)"
+  brief_question: open
+  subtypes: [bank, nbfc, insurer_life, insurer_general, holding, generic]
+  needs: [adjacent_period_docs]
+  sensors: [kpidiff, forensics]
+  mandatory_alternatives: [regulatory_change]
+  falsification_template: "metric re-disclosed on old basis by {period}"
+  coverage_terms: []
+- id: A9
+  question: "Regulatory event effect"
+  brief_question: open
+  subtypes: [bank, nbfc, insurer_life, insurer_general, holding, generic]
+  needs: [regevents]
+  sensors: [twin]
+  mandatory_alternatives: [sector_shock]
+  falsification_template: "{metric} returns to twin within {threshold} by {period}"
+  coverage_terms: []
+- id: A10
+  question: "Say-Do: guidance against later actuals"
+  brief_question: open
+  subtypes: [bank, nbfc, insurer_life, insurer_general, holding, generic]
+  needs: [guidance]
+  sensors: [sayado]
+  mandatory_alternatives: [guidance_already_revised]
+  falsification_template: "next guidance met within band by {period}"
+  coverage_terms: []
+- id: A11
+  question: "Insurer reduced panel"
+  brief_question: open
+  subtypes: [insurer_life, insurer_general]
+  needs: [ape, persistency_13m, solvency]
+  sensors: [twin, divergence]
+  mandatory_alternatives: [regulatory_change]
+  falsification_template: "{metric} {comparator} {threshold} by {period}"
+  coverage_terms: []
+- id: A12
+  question: "Recovery and insolvency activity naming the company rises before its reported slippages"
+  brief_question: Q1
+  subtypes: [bank, nbfc]
+  needs: [gross_slippages]
+  sensors: [external]
+  mandatory_alternatives: [external_series_artefact, sector_shock]
+  falsification_template: "{metric} {comparator} {threshold} by {period}"
+  coverage_terms: []
+- id: A13
+  question: "The company pays more than peers for new money"
+  brief_question: Q3
+  subtypes: [bank, nbfc]
+  needs: [cost_of_funds]
+  sensors: [external]
+  mandatory_alternatives: [external_series_artefact, sector_shock]
+  falsification_template: "{metric} {comparator} {threshold} by {period}"
+  coverage_terms: []
+- id: A14
+  question: "Official monthly data and the reported KPI disagree"
+  brief_question: Q3
+  subtypes: [bank, nbfc, insurer_life, insurer_general]
+  needs: []
+  sensors: [external]
+  mandatory_alternatives: [external_series_artefact, seasonality]
+  falsification_template: "{metric} {comparator} {threshold} by {period}"
+  coverage_terms: []

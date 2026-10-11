@@ -1,0 +1,105 @@
+[project]
+name = "signalcourt"
+version = "0.1.0"
+description = "Signal Court: finds non-obvious, evidence-backed signals in Indian financial-company filings."
+readme = "README.md"
+license = { file = "LICENSE" }
+# Runs on uv-managed 3.12; stays 3.10-compatible (no tomllib, TaskGroup, Self, StrEnum, datetime.UTC).
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    # Net
+    "httpx",
+    "nse",
+    "bse",
+    "playwright",
+    "trafilatura",
+    "tavily-python",
+    "ddgs",
+    # Parse
+    "lxml",
+    "pymupdf",
+    "pdfplumber",
+    "ftfy",
+    "rapidfuzz",
+    "python-dateutil",
+    "openpyxl",
+    "xlrd",
+    "tomli",
+    # Data and stats
+    "pandas",
+    "numpy",
+    "pyarrow",
+    "scipy",
+    "ruptures",
+    "statsmodels",
+    "scikit-learn",
+    # LLM
+    "openai",
+    "pydantic>=2",
+    "pydantic-settings>=2",
+    "tenacity",
+    "aiolimiter",
+    "tiktoken",
+    # Retrieval
+    "bm25s",
+    "fastembed",
+    # App
+    "typer",
+    "rich",
+    "fastapi",
+    "uvicorn",
+    "sse-starlette",
+    "jinja2",
+    "plotly",
+    "python-dotenv",
+    "pyyaml",
+    "structlog",
+]
+
+[project.optional-dependencies]
+# Only if NSE starts fingerprinting TLS (implementation.md 7.3).
+tls = ["curl_cffi"]
+# Only where pdfplumber fails on a table.
+camelot = ["camelot-py"]
+# Taxonomy labels while building the XBRL tag map.
+arelle = ["arelle-release"]
+# Twin cross-check in tests.
+twincheck = ["pysyncon"]
+
+[project.scripts]
+signal = "signalcourt.cli:app"
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "hypothesis",
+    "pytest-recording",
+    "ruff",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["signalcourt"]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-m 'not network' -ra"
+markers = ["network: live contract tests; laptop only, never in CI"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+extend-exclude = ["fixtures"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["E501"]                 # laptop day-1 scripts, kept as written
+"signalcourt/*/__init__.py" = ["E501"] # one-line module docstrings pointing at the spec

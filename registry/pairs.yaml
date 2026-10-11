@@ -1,0 +1,8 @@
+# Divergence pairs and expected relations (implementation.md 5.4).
+- {id: P1, a: yoy(advances), b: yoy(deposits), relation: co_move, subtypes: [bank], angle: A1}
+- {id: P2, a: qoq(gnpa_pct), b: yoy(write_offs), relation: gnpa_fall_with_writeoff_rise, subtypes: [bank, nbfc], angle: A2}
+- {id: P3, a: yoy(pat), b: yoy(ppop), relation: co_move, subtypes: [bank], angle: A3}
+- {id: P4, a: stage2_pct, b: stage3_pct, relation: s2_up_s3_flat, subtypes: [nbfc], angle: A4}
+- {id: P5, a: credit_cost, b: yoy(gross_slippages), relation: co_move, subtypes: [bank], angle: A1}
+- {id: P6, a: yoy(stage23_amt), b: qoq(stage2_pct + stage3_pct), relation: co_move, subtypes: [nbfc], angle: A1}
+- {id: P7, a: yoy(aum), b: yoy(stage23_amt), relation: growth_outpaces_stress, subtypes: [nbfc], angle: A1}

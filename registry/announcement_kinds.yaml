@@ -1,0 +1,8 @@
+# Exchange announcement description patterns -> doc_type (implementation.md 3). Case-insensitive regex.
+# Owner of the patterns: B2 (harvest/announcements.py). Skeleton values below.
+- {pattern: "investor presentation|analyst presentation|earnings presentation", doc_type: deck}
+- {pattern: "transcript", doc_type: transcript}
+- {pattern: "credit rating", doc_type: rating}
+- {pattern: "scheme of (amalgamation|arrangement)|merger|demerger", doc_type: scheme}
+- {pattern: "financial results", doc_type: results}
+- {pattern: "public disclosure|l-forms?|nl-forms?", doc_type: insurer_public_disclosure}

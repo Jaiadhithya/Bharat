@@ -1,0 +1,9 @@
+# Generic accounting-change lexicon from Ind AS / RBI wording only (review F3).
+change in accounting policy
+reclassified
+regrouped
+restated
+change in estimate
+with effect from
+revised definition
+expected credit loss
