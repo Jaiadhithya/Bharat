@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:in-capmkt="http://www.sebi.gov.in/xbrl/2025-01-31/in-capmkt">
+<link:schemaRef xlink:type="simple" xlink:href="in-capmkt-ent-2026-01-31.xsd"/>
+<xbrli:context id="OneD"><xbrli:entity><xbrli:identifier scheme="http://www.nseindia.com/NSESymbol">BANKDEV</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:startDate>2026-04-01</xbrli:startDate><xbrli:endDate>2026-06-30</xbrli:endDate></xbrli:period></xbrli:context>
+<xbrli:context id="OneI"><xbrli:entity><xbrli:identifier scheme="http://www.nseindia.com/NSESymbol">BANKDEV</xbrli:identifier></xbrli:entity><xbrli:period><xbrli:instant>2026-06-30</xbrli:instant></xbrli:period></xbrli:context>
+<xbrli:unit id="INR"><xbrli:measure>iso4217:INR</xbrli:measure></xbrli:unit>
+<xbrli:unit id="pure"><xbrli:measure>xbrli:pure</xbrli:measure></xbrli:unit>
+<xbrli:unit id="INRPerShare"><xbrli:divide><xbrli:unitNumerator><xbrli:measure>iso4217:INR</xbrli:measure></xbrli:unitNumerator><xbrli:unitDenominator><xbrli:measure>xbrli:shares</xbrli:measure></xbrli:unitDenominator></xbrli:divide></xbrli:unit>
+
+<in-capmkt:DateOfStartOfReportingPeriod contextRef="OneD">2026-04-01</in-capmkt:DateOfStartOfReportingPeriod>
+<in-capmkt:DateOfEndOfReportingPeriod contextRef="OneD">2026-06-30</in-capmkt:DateOfEndOfReportingPeriod>
+<in-capmkt:ReportingQuarter contextRef="OneD">First quarter</in-capmkt:ReportingQuarter>
+<in-capmkt:TypeOfReportingPeriod contextRef="OneD">Quarterly</in-capmkt:TypeOfReportingPeriod>
+<in-capmkt:WhetherResultsAreAuditedOrUnaudited contextRef="OneD">Unaudited</in-capmkt:WhetherResultsAreAuditedOrUnaudited>
+<in-capmkt:DescriptionOfPresentationCurrency contextRef="OneD">INR</in-capmkt:DescriptionOfPresentationCurrency>
+<in-capmkt:LevelOfRounding contextRef="OneD">Crores</in-capmkt:LevelOfRounding>
+<in-capmkt:Symbol contextRef="OneD">BANKDEV</in-capmkt:Symbol>
+<in-capmkt:NameOfBank contextRef="OneD">Dev Bank Limited</in-capmkt:NameOfBank>
+<in-capmkt:NatureOfReportStandaloneConsolidated contextRef="OneD">Consolidated</in-capmkt:NatureOfReportStandaloneConsolidated>
+<in-capmkt:InterestEarned contextRef="OneD" unitRef="INR" decimals="-5">100000000000</in-capmkt:InterestEarned>
+<in-capmkt:GrossNonPerformingAssets contextRef="OneD" unitRef="INR" decimals="-5">5000000000</in-capmkt:GrossNonPerformingAssets>
+<in-capmkt:PercentageOfGrossNpa contextRef="OneD" unitRef="pure" decimals="-5">0.0128</in-capmkt:PercentageOfGrossNpa>
+<in-capmkt:PercentageOfNpa contextRef="OneD" unitRef="pure" decimals="-5">0.0039</in-capmkt:PercentageOfNpa>
+<in-capmkt:CET1Ratio contextRef="OneD" unitRef="pure" decimals="-5">0.147</in-capmkt:CET1Ratio>
+<in-capmkt:ReturnOnAssets contextRef="OneD" unitRef="pure" decimals="-5">0.0151</in-capmkt:ReturnOnAssets>
+<in-capmkt:ProfitLossForThePeriod contextRef="OneD" unitRef="INR" decimals="-5">20000000000</in-capmkt:ProfitLossForThePeriod>
+</xbrli:xbrl>
